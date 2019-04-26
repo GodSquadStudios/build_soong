@@ -21,11 +21,15 @@ import (
 	"fmt"
 	"path/filepath"
 	"reflect"
+	"regexp"
 	"sort"
 	"strings"
 	"testing"
 
 	"github.com/google/blueprint/proptools"
+
+	"android/soong/android"
+	"android/soong/cc"
 )
 
 var (
@@ -1276,6 +1280,7 @@ func TestAndroidAppImport_DpiVariants(t *testing.T) {
 				},
 			},
 			presigned: true,
+			certificate: "PRESIGNED",
 			dex_preopt: {
 				enabled: true,
 			},
@@ -1297,6 +1302,7 @@ func TestAndroidAppImport_DpiVariants(t *testing.T) {
 			name:                "AAPTPreferredConfig matches",
 			aaptPreferredConfig: proptools.StringPtr("xhdpi"),
 			aaptPrebuiltDPI:     []string{"xxhdpi", "ldpi"},
+			aaptPrebuiltDPI:     []string{"xxhdpi", "lhdpi"},
 			expected:            "prebuilts/apk/app_xhdpi.apk",
 		},
 		{
