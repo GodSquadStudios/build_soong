@@ -17,7 +17,7 @@ package java
 import (
 	"android/soong/android"
 	"android/soong/cc"
-
+	"regexp"
 	"fmt"
 	"path/filepath"
 	"reflect"
