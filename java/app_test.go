@@ -15,15 +15,11 @@
 package java
 
 import (
-	"android/soong/android"
-	"android/soong/cc"
-	"regexp"
+//	"android/soong/android"
+//	"android/soong/cc"
 	"fmt"
 	"path/filepath"
 	"reflect"
-/*
-	"regexp"
-*/
 	"sort"
 	"strings"
 	"testing"
